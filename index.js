@@ -66,6 +66,62 @@ fi = (function() {
         return count;
     },
 
+    first: function(array, n=1) {
+      return array.slice(0, n)
+    },
+
+    last: function(array, n=1) {
+      return array.slice(-n)
+    },
+
+    compact: function(array) {
+      const newArray = [];
+      for (let i = 0; i < array.length; i++) {
+        if (array[i]) {
+        newArray.push(array[i])
+       }
+      }
+      return newArray;
+    },
+
+    // sortBy: function(array, iteratee) {
+    //   const newArray = []
+    //   for (let i = 0; i < array.length; i++) {
+    //     a = iteratee(array[i], i, array)
+    //     b = iteratee(array[i+1], i+1, array)
+    //     if (a > b) {
+    //       array[i] = newArray[i+1]
+    //       array[i+1] = newArray[i]
+    //     }
+    //     else {
+    //       array[i] = newArray[i]
+    //       array[i+1] = newArray[i+1]
+    //     }
+    //   }
+    //   return newArray
+    // },
+
+    // iSortLast: function(arr) {
+    //   let currIdx = arr.length-1
+    //   while(currIdx > 0 && arr[currIdx-1] > arr[currIdx]) {
+    //     const temp = arr[currIdx-1]
+    //     arr[currIdx-1] = arr[currIdx]
+    //     arr[currIdx] = temp
+    //     currIdx--
+    //   }
+    // },
+    //
+    // sortBy: function(collection, callback) {
+    //   const newArr = []
+    //   for (let val of collection) {
+    //     newArr.push(callback(val))
+    //     this.iSortLast(newArr)
+    //   }
+    //   return newArr
+    // },
+
+
+
     functions: function() {
     },
 
