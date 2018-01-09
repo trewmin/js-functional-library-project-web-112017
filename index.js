@@ -32,12 +32,41 @@ fi = (function() {
       };
     },
 
-    reduce: function() {
+    reduce: function(collection, iteratee, acc) {
 
+      for (let i = 0; i < collection.length; i++) {
+        acc = iteratee(acc, collection[i], collection)
+      }
+      return acc;
+    },
+
+    find: function(collection, predicate) {
+        for (let i = 0; i < collection.length; i++) {
+         if (predicate(collection[i])) {
+           return collection[i];
+        }
+      }
+    },
+
+    filter: function(collection, predicate) {
+        const newCollection = [];
+        for (let i = 0; i < collection.length; i++) {
+          if (predicate(collection[i])) {
+          newCollection.push(collection[i])
+         }
+      }
+      return newCollection;
+    },
+
+    size: function(collection) {
+       let count = 0;
+       for (const element in collection) {
+         count++;
+       }
+        return count;
     },
 
     functions: function() {
-
     },
 
 
