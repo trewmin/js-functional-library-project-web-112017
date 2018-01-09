@@ -120,9 +120,24 @@ fi = (function() {
     //   return newArr
     // },
 
+    keys: function (object) {
+      const keyArray = [];
+       for (const key in object) {
+         keyArray.push(key)
+       }
+       return keyArray;
+    },
 
+    values: function (object) {
+      const valueArray = [];
+       for (const key in object) {
+         valueArray.push(object[key])
+       }
+       return valueArray;
+    },
 
-    functions: function() {
+    functions: function(fi) {
+      return this.keys(fi).sort();
     },
 
 
